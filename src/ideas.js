@@ -11,6 +11,7 @@ class Ideas extends Component {
     }
 
     this.onChange = this.onChange.bind(this);
+    this.onDelete = this.onDelete.bind(this);
 
     /* Setup Firebase */
     const database = firebase.database();
@@ -18,16 +19,20 @@ class Ideas extends Component {
 
     ideasRef.on('child_added', this.onChange);
     ideasRef.on('child_changed', this.onChange);
-    ideasRef.on('child_removed', this.onChange);
+    ideasRef.on('child_removed', this.onDelete);
 
   }
 
   onChange(e) {
-    console.log(e);
     const state = this.state;
     state.ideas[e.key] = e.val();
     this.setState(state);
-    console.log(state.ideas);
+  }
+
+  onDelete(e) {
+    const state = this.state;
+    delete state.ideas[e.key];
+    this.setState(state);
   }
 
   render() {
