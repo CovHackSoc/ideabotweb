@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
-import Ideas from './ideas';
+import { Route } from 'react-router-dom';
+
+import View from './view';
+import Home from './home';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <h1>Hackathon Project Ideas</h1>
-        <Ideas />
+        <Route exact path="/" component={Home} />
+        <Route path="/:id" component={View} />
       </div>
     );
   }

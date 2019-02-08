@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { Table } from 'reactstrap';
+import { Link } from 'react-router-dom'
 import firebase from './firebase';
+
 
 class Ideas extends Component {
   constructor() {
     super();
     this.state = {
       ideas: {},
-      fragment: window.location.hash || null,
     }
 
     this.onChange = this.onChange.bind(this);
@@ -47,6 +48,7 @@ class Ideas extends Component {
     });
     const ListItems = rawItems.map(item => (
       <tr key={item.id}>
+        <td><Link to={item.id}>{item.id}</Link></td>
         <td>{item.author}</td>
         <td>{item.idea}</td>
         <td>{item.score}</td>
@@ -56,6 +58,7 @@ class Ideas extends Component {
       <Table>
         <thead>
           <tr>
+            <th>ID</th>
             <th>Author</th>
             <th>Idea</th>
             <th>Score</th>
