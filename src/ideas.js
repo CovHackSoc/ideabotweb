@@ -42,12 +42,14 @@ class Ideas extends Component {
         key: key,
         author: this.state.ideas[key].author || 'anonymous',
         idea: this.state.ideas[key].idea || '',
+        score: this.state.ideas[key].score || 0,
       };
     });
     const ListItems = rawItems.map(item => (
       <tr key={item.id}>
-        <td>{item.author || 'anonymous' }</td>
-        <td>{item.idea || '' }</td>
+        <td>{item.author}</td>
+        <td>{item.idea}</td>
+        <td>{item.score}</td>
       </tr>
     ));
     return (
@@ -56,6 +58,7 @@ class Ideas extends Component {
           <tr>
             <th>Author</th>
             <th>Idea</th>
+            <th>Score</th>
           </tr>
         </thead>
         <tbody>
