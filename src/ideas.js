@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Table } from 'reactstrap';
+import { FormattedRelative } from 'react-intl';
 import { Link } from 'react-router-dom'
 import firebase from './firebase';
 
@@ -44,6 +45,7 @@ class Ideas extends Component {
         author: this.state.ideas[key].author || 'anonymous',
         idea: this.state.ideas[key].idea || '',
         score: this.state.ideas[key].score || 0,
+        date: this.state.ideas[key].date || 0,
       };
     });
     const ListItems = rawItems.map(item => (
@@ -52,6 +54,7 @@ class Ideas extends Component {
         <td>{item.author}</td>
         <td>{item.idea}</td>
         <td>{item.score}</td>
+        <td><FormattedRelative value={item.date} /></td>
       </tr>
     ));
     return (
@@ -62,6 +65,7 @@ class Ideas extends Component {
             <th>Author</th>
             <th>Idea</th>
             <th>Score</th>
+            <th>Date</th>
           </tr>
         </thead>
         <tbody>

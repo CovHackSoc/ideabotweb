@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { FormattedRelative } from 'react-intl';
 import firebase from './firebase';
 
 class View extends Component {
@@ -38,6 +39,7 @@ class View extends Component {
         <h1>Author: {this.state.idea.author || 'anonymous'}</h1>
         <h1>Idea: {this.state.idea.idea || 'N/A'}</h1>
         <h1>Score: {this.state.idea.score || 0}</h1>
+            <h1>Date: <FormattedRelative value={this.state.idea.date || 0} /></h1>
       </div>
     );
   }

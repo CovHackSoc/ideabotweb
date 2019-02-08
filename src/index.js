@@ -4,13 +4,16 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom';
+import { IntlProvider } from 'react-intl';
 
 
 ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+  <IntlProvider locale="en">
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </IntlProvider>,
   document.getElementById('root')
 );
 
