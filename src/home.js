@@ -7,8 +7,10 @@ class Home extends Component {
     return (
       <div>
         <h1>Hackathon Project Ideas</h1>
-        <Ideas />
+        <br />
         <AddIdea />
+        <br />
+        <Ideas />
       </div>
     );
   }

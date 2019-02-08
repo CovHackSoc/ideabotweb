@@ -50,22 +50,22 @@ class Ideas extends Component {
     });
     const ListItems = rawItems.map(item => (
       <tr key={item.id}>
-        <td><Link to={item.id}>{item.id}</Link></td>
         <td>{item.author}</td>
         <td>{item.idea}</td>
         <td>{item.score}</td>
         <td><FormattedRelative value={item.date} /></td>
+        <td><Link to={item.id}>Link</Link></td>
       </tr>
     ));
     return (
       <Table>
         <thead>
           <tr>
-            <th>ID</th>
             <th>Author</th>
             <th>Idea</th>
             <th>Score</th>
             <th>Date</th>
+            <th>Link</th>
           </tr>
         </thead>
         <tbody>
