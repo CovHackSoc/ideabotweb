@@ -17,7 +17,7 @@ class Ideas extends Component {
 
     /* Setup Firebase */
     const database = firebase.database();
-    const ideasRef = database.ref('ideas').child('all');
+    const ideasRef = database.ref('ideas').child('all').orderByChild('date');
 
     ideasRef.on('child_added', this.onChange);
     ideasRef.on('child_changed', this.onChange);
