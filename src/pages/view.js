@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { FormattedRelative } from 'react-intl';
-import firebase from './firebase';
+import firebase from '../firebase';
 
 class View extends Component {
   constructor(props) {
