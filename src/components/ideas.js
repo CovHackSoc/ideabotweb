@@ -56,7 +56,7 @@ class Ideas extends Component {
         <td><FormattedRelative value={item.date} /></td>
         <td><Link to={`idea/${item.id}`}>Link</Link></td>
       </tr>
-    ));
+    )).reverse();
     return (
       <Table>
         <thead>
